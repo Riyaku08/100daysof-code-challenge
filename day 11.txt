@@ -1,0 +1,67 @@
+Given an array of names of candidates in an election. A candidate name in array represents a vote casted to the candidate. The task is to print the name of candidates received maximum vote. If there is tie, print lexicographically smaller name.
+
+Input:
+The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. Each test case consists of two lines. First line of each test case contains an Integer N denoting number of votes and the second line contains N space separated strings.
+
+Output:
+For each test case, print the winner of election in new line.
+
+Constraints:
+1<=T<=100
+2<=N<=105
+1<=|String length|<=20
+
+Example:
+Input:
+2
+6
+aaa bbb ccc bbb aaa  aaa
+7
+geeks for geeks for geeks aaa aaa
+
+Output:
+aaa
+geeks
+
+solution:
+
+#include<bits/stdc++.h>
+using namespace std;
+bool sortbysec(pair<string,long int>a,pair<string,long int>b)
+{
+    if(a.second!=b.second)
+    {
+        return (a.second>b.second);
+    }
+    else
+    return (a.first<b.first);
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long int n;
+        cin>>n;
+        map<string,long int>m;
+        vector<pair<string,long int>>v;
+        m.clear();
+        v.clear();
+        for(long int i=0;i<n;i++)
+        {
+            string s;
+            cin>>s;
+            m[s]=m[s]+1;
+        }
+         map<string,long int>::iterator i;
+         
+         for(i=m.begin();i!=m.end();i++)
+         {
+             v.push_back(make_pair(i->first,i->second));
+         }
+         sort(v.begin(),v.end(),sortbysec);
+         cout<<v[0].first<<endl;
+        
+    }
+}
