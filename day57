@@ -1,0 +1,109 @@
+Given two strings A and B. Find the characters that are not common in the two strings. 
+
+Note :- Return the string in sorted order.
+
+Example 1:
+
+Input:
+A = geeksforgeeks
+B = geeksquiz
+Output: fioqruz
+Explanation: 
+The characters 'f', 'i', 'o', 'q', 'r', 'u','z' 
+are either present in A or B, but not in both.
+Example 2:
+
+Input:
+A = characters
+B = alphabets
+Output: bclpr
+Explanation: The characters 'b','c','l','p','r' 
+are either present in A or B, but not in both.
+
+Your Task:  
+You dont need to read input or print anything. Complete the function UncommonChars() which takes strings A and B as input parameters and returns a string that contains all the uncommon characters in sorted order. If no such character exists return "-1".
+
+
+Expected Time Complexity: O(M+N) where M and N are the sizes of A and B respectively.
+Expected Auxiliary Space: O(M+N)  
+
+
+Constraints:
+1<= M,N <= 104
+String may contain duplicate characters.
+
+solution:
+ public:
+
+        string UncommonChars(string A, string B)
+
+        {
+
+            // code here
+
+            set<int>s1;
+
+            set<int>s2;
+
+            string s3;
+
+            for(int i=0; i<A.size(); i++)
+
+            {
+
+                s1.insert(A[i]);
+
+            }
+
+            for(int i=0; i<B.size(); i++)
+
+            {
+
+                s2.insert(B[i]);
+
+            }
+
+            for(auto x:s1)
+
+            {
+
+                if(s2.find(x)==s2.end())
+
+                {
+
+                    s3.push_back(x);
+
+                }
+
+            }
+
+            for(auto y:s2)
+
+            {
+
+                if(s1.find(y)==s1.end())
+
+                {
+
+                    s3.push_back(y);
+
+                }
+
+            }
+
+            sort(s3.begin(),s3.end());
+
+            if(s3.size()==0)
+
+            {
+
+                return "-1";
+
+            }
+
+            return s3;
+
+        }
+
+};
+ 
