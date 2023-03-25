@@ -1,0 +1,69 @@
+Problem
+In a classic chase, Tom is running after Jerry as Jerry has eaten Tom's favourite food.
+
+Jerry is running at a speed of 
+�
+X metres per second while Tom is chasing him at a speed of 
+�
+Y metres per second. Determine whether Tom will be able to catch Jerry.
+
+Note that initially Jerry is not at the same position as Tom.
+
+Input Format
+The first line of input will contain a single integer 
+�
+T, denoting the number of test cases.
+Each test case consists of two space-separated integers 
+�
+X and 
+�
+Y — the speeds of Jerry and Tom respectively.
+Output Format
+For each test case, output on a new line, YES, if Tom will be able to catch Jerry. Otherwise, output NO.
+
+You can print each character in uppercase or lowercase. For example NO, no, No, and nO are all considered the same.
+
+Constraints
+1
+≤
+�
+≤
+100
+1≤T≤100
+1
+≤
+�
+,
+�
+≤
+10
+1≤X,Y≤10
+solution:
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int t;
+		Scanner s=new Scanner (System.in);
+		t=s.nextInt();
+		while( t>0){
+		    int X,Y;
+		    X=s.nextInt();
+		    Y=s.nextInt();
+		    if(X<Y){
+		        System.out.println("YES");
+		    }
+		    else{
+		        System.out.println("NO");
+		    }
+		    t--;
+		    }
+		    }
+		}
+	
+
