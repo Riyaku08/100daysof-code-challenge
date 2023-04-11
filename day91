@@ -1,0 +1,80 @@
+Problem
+King loves to go on tours with his friends.
+
+King has 
+�
+N cars that can seat 
+5
+5 people each and 
+�
+M cars that can seat 
+7
+7 people each. Determine the maximum number of people that can travel together in these cars.
+
+Input Format
+The first line of input contains a single integer 
+�
+T, the number of test cases.
+The first and only line of each test case contains two space-separated integers 
+�
+N and 
+�
+M — the number of 
+5
+5-seaters and 
+7
+7-seaters, respectively.
+Output Format
+For each test case, output on a new line the maximum number of people that can travel together.
+
+Constraints
+1
+≤
+�
+≤
+100
+1≤T≤100
+0
+≤
+�
+,
+�
+≤
+100
+0≤N,M≤100
+Sample 1:
+Input
+Output
+4
+4 8
+2 13
+14 5
+8 8
+76
+101
+105
+96
+
+solution:
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+			int t;
+Scanner s=new Scanner (System.in);
+t=s.nextInt();
+while(t>0){
+    int N,M;
+    N=s.nextInt();
+    M=s.nextInt();
+        System.out.println(5*N+7*M);
+    t--;
+ 
+}
+	}
+}
