@@ -1,0 +1,170 @@
+Problem
+Chef has an array 
+�
+A of length 
+�
+N.
+
+In one operation, Chef can choose any two distinct indices 
+�
+,
+�
+i,j 
+(
+1
+≤
+�
+,
+�
+≤
+�
+,
+�
+≠
+�
+)
+(1≤i,j≤N,i=j) and either change 
+�
+�
+A 
+i
+​
+  to 
+�
+�
+A 
+j
+​
+  or change 
+�
+�
+A 
+j
+​
+  to 
+�
+�
+A 
+i
+​
+ .
+
+Find the minimum number of operations required to make all the elements of the array equal.
+
+Input Format
+First line will contain 
+�
+T, number of test cases. Then the test cases follow.
+First line of each test case consists of an integer 
+�
+N - denoting the size of array 
+�
+A.
+Second line of each test case consists of 
+�
+N space-separated integers 
+�
+1
+,
+�
+2
+,
+…
+,
+�
+�
+A 
+1
+​
+ ,A 
+2
+​
+ ,…,A 
+N
+​
+  - denoting the array 
+�
+A.
+Output Format
+For each test case, output the minimum number of operations required to make all the elements equal.
+
+Constraints
+1
+≤
+�
+≤
+100
+1≤T≤100
+2
+≤
+�
+≤
+1000
+2≤N≤1000
+1
+≤
+�
+�
+≤
+1000
+1≤A 
+i
+​
+ ≤1000
+Sample 1:
+Input
+Output
+4
+3
+1 2 3
+4
+5 5 5 5
+4
+2 2 1 1
+3
+1 1 2
+2
+0
+2
+1
+solution:
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	int t;
+	Scanner s=new Scanner (System.in);
+	t=s.nextInt();
+	while(t>0){
+	    int N;
+	    N=s.nextInt();
+	    int A []= new int [N];
+	    for(int i=0; i<N; i++){
+	       A[i]=s.nextInt();
+	    }
+	    Arrays.sort(A);
+	     int count =1;
+	     int MAxcount=0;
+	     for(int i=0; i<N-1; i++){
+	         if(A[i]== A[i+1])
+	         count++;
+	         else{
+	          if( MAxcount<count){
+	                 MAxcount=count;
+	             }
+	      count=1;
+	         }
+	     }
+	    if(MAxcount<count){
+	        MAxcount=count;
+	    }
+	     System.out.println(N-MAxcount);
+	     t--;
+	}
+	}
+    }
